@@ -14,8 +14,10 @@ const User = mongoose.model("user",userSchema);
 app.get("/", async(req,res)=>{
  
     const data = await User.find({});
-    res.json(data);
-
+    // res.json(data);
+    console.log(data)
+    
+ res.render("home.ejs",{names:data})
 //   
 
 
