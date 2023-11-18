@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb+srv://admin-mohammed:Minna2018@cluster0.c4wkhb3.mongodb.net/myDB?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://admin-mohammed:Mohammed123@cluster0.c4wkhb3.mongodb.net/myDB?retryWrites=true&w=majority")
 const userSchema = new mongoose.Schema({
     name:String,
     age:Number,
@@ -14,10 +14,10 @@ const User = mongoose.model("user",userSchema);
 app.get("/", async(req,res)=>{
  
     const data = await User.find({});
-    // res.json(data);
+    res.json(data);
     console.log(data)
     
- res.render("home.ejs",{names:data})
+//  res.render("home.ejs",{names:data})
 //   
 
 
